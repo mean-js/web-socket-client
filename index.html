@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <title>SSE CLIENT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="./bower_components/angular-material/angular-material.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">-->
+
+    <script src="./bower_components/angular/angular.min.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-aria/angular-aria.min.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+    <script src="./bower_components/underscore/underscore-min.js"></script>
+    <script src="./bower_components/moment/min/moment.min.js"></script>
+
+    <script src="./app.js"></script>
+</head>
+
+<body ng-controller="indexCtrl">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+
+            </md-button>
+
+            <h2 flex md-truncate>Web Socket Client</h2>
+
+            <md-button class="md-icon-button" aria-label="Favorite">
+
+            </md-button>
+
+            <md-button class="md-icon-button" aria-label="More">
+
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+    <div layout="row" style="height:90vh; overflow-y:scroll ">
+        <div flex="50" flex-offset="25">
+            <md-card ng-repeat="item in refjson.cardList" ng-style="item.bg">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.title}}</span>
+                        <span class="md-subhead">{{item.ts | date : 'dd MMM yyyy HH:mm:ss'}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
